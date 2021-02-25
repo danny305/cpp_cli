@@ -14,20 +14,20 @@ int main(int argc, char* argv[]){
 
     cout << endl << "===============================================" << endl << endl;
 
-    int opt = getopt(argc, argv, "abX");
+    int opt = getopt(argc, argv, "a:b:X");
 
     while (opt != -1){
         switch(opt){
             case 'a': 
-                cout << "Option a passed" << endl;
+                cout << "Option a passed with argument: " << optarg << endl; // optarg is a global variable declared in getopt.h
                 break;
             case 'b': 
-                cout << "Option b passed" << endl;
+                cout << "Option b passed with argument: " << optarg << endl;
                 break;
             case 'X': 
                 cout << "Option X passed" << endl;
                 break;
         }
-        opt = getopt(argc, argv, "abX");
+        opt = getopt(argc, argv, "a:b:X");
     }
 }
